@@ -106,7 +106,7 @@ get_cellmarkers <- function(scRNA,celltypes_all,envir_binary,data_fir,label_fir,
         # The following codes are used to summarize causally relevant genes
         assoc <- pcSimple.fit$G
         genes <- names(pcSimple.fit$G)
-        genes <- gsub("HLA.","HLA-",genes) # There are special cases where the "-" in gene symbol was replaced by ".
+        # genes <- gsub("HLA.","HLA-",genes) # There are special cases where the "-" in gene symbol was replaced by ".
         zMin <- pcSimple.fit$zMin
         res <- cbind(genes,assoc,zMin)
         res_causal <- res[which(assoc==TRUE),]
@@ -158,8 +158,8 @@ get_cellmarkers <- function(scRNA,celltypes_all,envir_binary,data_fir,label_fir,
         # The following codes are used to summarize causally relevant genes
         assoc <- pcSimple.fit$G
         genes <- names(pcSimple.fit$G)
-        genes <- gsub("HLA.","HLA-",genes) # There are special cases where the "-" in gene symbol was replaced by "."
-        genes <- gsub("MT.","MT-",genes) # There are special cases where the "-" in gene symbol was replaced by "."
+        # genes <- gsub("HLA.","HLA-",genes) # There are special cases where the "-" in gene symbol was replaced by "."
+        # genes <- gsub("MT.","MT-",genes) # There are special cases where the "-" in gene symbol was replaced by "."
         zMin <- pcSimple.fit$zMin
         res_sec <- cbind(genes,assoc,zMin)
         res_causal_sec <- res_sec[which(assoc==TRUE),]
